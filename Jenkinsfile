@@ -18,6 +18,7 @@ pipeline {
     }
     stage('Run') {
       steps {
+        sh 'docker rm mypokedex'
         sh 'docker run -d --rm -p 5555:5555 --name mypokedex pokedex-go:latest'
       }
     }
